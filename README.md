@@ -10,10 +10,11 @@ TODO
 
 ##Dependencies
 Ruby 2.0 or higher
+
 Unix-based operating system
 
 ##Credits
-Thanks to the Ruby community for the valuable resources. All code is mine.
+Thanks to the Ruby community for the valuable resources.
 
 ##Questions/Comments/Concerns
 If you have any questions regarding this project, send me a message and I'd be more than happy to explain my code.
