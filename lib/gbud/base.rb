@@ -19,26 +19,34 @@ FileUtils.mkdir_p([
   "#{p_name}/test"
 ])
 
-# creates initial files
-File.open("#{p_name}/lib/#{p_name}.rb", 'w') do
-  puts "require '#{p_name}/base'"
-end
+# creates lib/base script
+FileUtils.touch("#{p_name}/lib/#{p_name}/base.rb")
 
-File.open("#{p_name}/lib/#{p_name}/version.rb", 'w') do
-  puts "module #{p_name}"
-  puts "\tVERSION = #{version}"
-  puts 'end'
-end
+# creates main script
+m = File.new("#{p_name}/lib/#{p_name}.rb", 'w+')
+m.puts "require '#{p_name}/base'"
+m.close
+
+# creates executable
+e = File.new("#{p_name}/bin/#{p_name}", 'w+')
+e.puts '#!/usr/bin/env ruby'
+e.puts 'begin'
+e.puts "\trequire '#{p_name}'"
+e.puts 'rescue LoadError'
+e.puts "\trequire 'rubygems'"
+e.puts "\trequire '#{p_name}'"
+e.puts 'end'
+e.close
+File.chmod(0755, "#{p_name}/bin/#{p_name}")
 
 # writes gemspec
 gemspec = File.new("#{p_name}/#{p_name}.gemspec", 'w+')
 gemspec.puts '# -*- encoding: utf-8 -*-'
 gemspec.puts "lib = File.expand_path('../lib', __FILE__)"
 gemspec.puts "$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)\n\n"
-gemspec.puts "require '#{p_name}/version'\n\n"
 gemspec.puts 'Gem::Specification.new do |s|'
 gemspec.puts "\ts.name          = \"#{p_name}\""
-gemspec.puts "\ts.version       = #{p_name}::VERSION"
+gemspec.puts "\ts.version       = #{version}"
 gemspec.puts "\ts.platform      = Gem::Platform::RUBY"
 gemspec.puts "\ts.authors       = #{authors}"
 gemspec.puts "\ts.email         = #{email}"
@@ -47,7 +55,14 @@ gemspec.puts "\ts.summary       = #{summary}"
 gemspec.puts "\ts.description   = #{description}"
 gemspec.puts "\ts.license       = #{license}"
 gemspec.puts "\ts.files         = ['lib/#{p_name}.rb']"
-gemspec.puts "\ts.executables   = ['bin/#{p_name}']"
+gemspec.puts "\ts.executables   = ['#{p_name}']"
 gemspec.puts "\ts.test_files    = ['test/test_#{p_name}.rb']"
 gemspec.puts "\ts.require_path  = ['lib']"
 gemspec.puts 'end'
+
+# TODO: WRITE RAKEFILE SCRIPT
+
+# TODO: WRITE AUTOMATED TESTS
+
+# runs automated tests
+system 'rake'
