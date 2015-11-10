@@ -8,6 +8,16 @@ This script takes the project name as user input and sets up the directory struc
 ##Instructions
 TODO
 
+##TODO
+* Fix bugs in gemspec writer
+* Code for...
+** Creating binary file
+** Creating `#{p_name}.rb`, `lib/base.rb`, and `test/test_#{p_name}.rb`
+** Creating Rakefile
+* Make tests
+** Update test filenames in gemspec
+** Test and find bugs
+
 ##Dependencies
 Ruby 2.0 or higher
 

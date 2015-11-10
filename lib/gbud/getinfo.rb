@@ -6,8 +6,8 @@ module GetInfo
       @info = gets.chomp.to_s
       puts "You have entered: #{@info}"
       print 'Is this correct? (Y/N) => '
-      u_verify = gets.chomp.to_s
-      break if u_verify == 'Y' || u_verify == 'y'
+      u_verify = gets.chomp.to_s.upcase
+      break if u_verify == 'Y'
     end
     @info
   end
