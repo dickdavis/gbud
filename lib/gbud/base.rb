@@ -1,7 +1,7 @@
 # gbud base script
 # Copyright 2015 Richard Davis GPL v3
 require 'fileutils'
-require './getinfo.rb'
+require './lib/gbud/getinfo.rb'
 
 p_name = GetInfo.user_prompt('Project name => ')
 version = GetInfo.user_prompt('Version number => ')
@@ -14,7 +14,7 @@ license = GetInfo.user_prompt('Project\'s license => ')
 
 # sets up directory structure
 FileUtils.mkdir_p([
-  "#{p_name}/bin/#{p_name}",
+  "#{p_name}/bin/",
   "#{p_name}/lib/#{p_name}",
   "#{p_name}/test"
 ])
