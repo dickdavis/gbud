@@ -6,7 +6,18 @@ This project is aims to simplify the initialization of a Ruby project by setting
 This script takes the project name as user input and sets up the directory structure and additional files that would otherwise be required for the user to create manually.
 
 ##Installation
-Execute `gem install gbud`
+To install from rubygems, execute:
+
+`gem install gbud`
+
+Alternatively, you could build from source:
+
+```
+git clone https://github.com/d3d1rty/gbud.git
+cd gbud
+gem build gbud.gemspec
+gem install ./gbud-0.0.1.gem
+```
 
 ##Usage
 TODO
