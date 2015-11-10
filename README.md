@@ -1,14 +1,18 @@
-#Ruby Project Skeleton
+#Gem Buddy
 ##About
 This project is aims to simplify the initialization of a Ruby project by setting up the appropriate directories and files needed.
 
 ##What it Does
 This script takes the project name as user input and sets up the directory structure and additional files that would otherwise be required for the user to create manually.
 
-##Instructions
+##Installation
+Execute `gem install gbud`
+
+##Usage
 TODO
 
 ##TODO
+* Write usage
 * Fix bugs in gemspec writer
 * Code for...
   * Creating binary file
