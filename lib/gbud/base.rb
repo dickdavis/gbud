@@ -60,7 +60,15 @@ gemspec.puts "\ts.test_files    = ['test/test_#{p_name}.rb']"
 gemspec.puts "\ts.require_path  = ['lib']"
 gemspec.puts 'end'
 
-# TODO: WRITE RAKEFILE SCRIPT
+# writes Rakefile
+r = File.new("#{p_name}/Rakefile")
+r.puts 'require \'rake/testtask\''
+r.puts 'Rake::TestTask.new do |t|'
+r.puts "\tt.libs << 'test'"
+r.puts 'end'
+r.puts 'desc \'Run tests\''
+r.puts 'task :default => :test'
+r.close
 
 # TODO: WRITE AUTOMATED TESTS
 
