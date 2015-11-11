@@ -17,6 +17,6 @@ Gem::Specification.new do |s|
   s.license       = 'GPL v3'
   s.files         = ['lib/gbud.rb']
   s.executables   = ['gbud']
-  s.test_files    = ['test/test_gbud.rb']
+  s.test_files    = ['test/test_getinfo.rb']
   s.require_path  = ['lib']
 end

@@ -1,16 +1,16 @@
 # gbud base script
 # Copyright 2015 Richard Davis GPL v3
 require 'fileutils'
-require './lib/gbud/getinfo.rb'
+require '../gbud/lib/gbud/getinfo.rb'
 
-p_name = GetInfo.user_prompt('Project name => ')
-version = GetInfo.user_prompt('Version number => ')
-authors = GetInfo.user_prompt('Authors separated by a comma => ').split(', ')
-email = GetInfo.user_prompt('Project email => ')
-site = GetInfo.user_prompt('Project website => ')
-summary = GetInfo.user_prompt('Enter a short summary of the project => ')
-description = GetInfo.user_prompt('Enter a description of the project => ')
-license = GetInfo.user_prompt('Project\'s license => ')
+p_name = GetInfo.new('Project name => ').user_prompt
+version = GetInfo.new('Version number => ').user_prompt
+authors = GetInfo.new('Project authors => ').user_prompt.delete(' ').split(',')
+email = GetInfo.new('Project email => ').user_prompt
+site = GetInfo.new('Project website => ').user_prompt
+summary = GetInfo.new('Enter a short summary of the project => ').user_prompt
+description = GetInfo.new('Enter a description of the project => ').user_prompt
+license = GetInfo.new('Project\'s license => ').user_prompt
 
 # sets up directory structure
 FileUtils.mkdir_p([
@@ -25,6 +25,11 @@ FileUtils.touch("#{p_name}/lib/#{p_name}/base.rb")
 # creates main script
 m = File.new("#{p_name}/lib/#{p_name}.rb", 'w+')
 m.puts "require '#{p_name}/base'"
+m.puts 'class HelloWorld'
+m.puts "\tdef self.hello"
+m.puts "\t\treturn 'Hello world!'"
+m.puts "\tend"
+m.puts 'end'
 m.close
 
 # creates executable
@@ -45,15 +50,15 @@ gemspec.puts '# -*- encoding: utf-8 -*-'
 gemspec.puts "lib = File.expand_path('../lib', __FILE__)"
 gemspec.puts "$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)\n\n"
 gemspec.puts 'Gem::Specification.new do |s|'
-gemspec.puts "\ts.name          = \"#{p_name}\""
-gemspec.puts "\ts.version       = #{version}"
+gemspec.puts "\ts.name          = '#{p_name}'"
+gemspec.puts "\ts.version       = '#{version}'"
 gemspec.puts "\ts.platform      = Gem::Platform::RUBY"
 gemspec.puts "\ts.authors       = #{authors}"
-gemspec.puts "\ts.email         = #{email}"
-gemspec.puts "\ts.homepage      = #{site}"
-gemspec.puts "\ts.summary       = #{summary}"
-gemspec.puts "\ts.description   = #{description}"
-gemspec.puts "\ts.license       = #{license}"
+gemspec.puts "\ts.email         = '#{email}'"
+gemspec.puts "\ts.homepage      = '#{site}'"
+gemspec.puts "\ts.summary       = '#{summary}'"
+gemspec.puts "\ts.description   = <<-EOF\n\t\t#{description}\nEOF"
+gemspec.puts "\ts.license       = '#{license}'"
 gemspec.puts "\ts.files         = ['lib/#{p_name}.rb']"
 gemspec.puts "\ts.executables   = ['#{p_name}']"
 gemspec.puts "\ts.test_files    = ['test/test_#{p_name}.rb']"
@@ -61,7 +66,7 @@ gemspec.puts "\ts.require_path  = ['lib']"
 gemspec.puts 'end'
 
 # writes Rakefile
-r = File.new("#{p_name}/Rakefile")
+r = File.new("#{p_name}/Rakefile", 'w+')
 r.puts 'require \'rake/testtask\''
 r.puts 'Rake::TestTask.new do |t|'
 r.puts "\tt.libs << 'test'"
@@ -71,6 +76,17 @@ r.puts 'task :default => :test'
 r.close
 
 # TODO: WRITE AUTOMATED TESTS
+t = File.new("#{p_name}/test/test_#{p_name}.rb", 'w+')
+t.puts "require 'test/unit'"
+t.puts "require '#{p_name}/base'"
+t.puts 'class GetInfoTest < Test::Unit::TestCase'
+t.puts "\tdef test_take_input"
+t.puts "\t\t\tuser.puts 'test'"
+t.puts "\t\t\tassert_equal(HelloWorld.hello, 'Hello world!')"
+t.puts "\tend"
+t.puts 'end'
+t.close
 
 # runs automated tests
-system 'rake'
+#system 'cd '
+#system 'rake'
