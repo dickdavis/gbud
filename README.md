@@ -20,22 +20,30 @@ gem install ./gbud-0.0.1.gem
 ```
 
 ##Usage
-TODO
+1. Navigate to the directory you want to hold the project
+2. Execute command `gbud`
+3. Answer the prompts to set the required information for the project
+4. Based off your input, gbud will generate
+  * a skeleton directory for the project
+  * an executable
+  * base script
+  * test script
+  * gemspec
+  * Rakefile
+5. Navigate to the generated project directory
+6. Execute `rake test` to verify everything is good to go
 
 ##TODO
-* Write usage
-* Code for...
-  * Creating `test/test_#{p_name}.rb`
-  * Creating `Rakefile`
-* Make (actual) tests
-  * Update test filenames in gemspec
-  * Test and find bugs
-* Begin looking at implementing arguments to control behavior
+* Write RDoc's
+* Write code to validate input for URI to prevent gem build issues
+* Implement Getoptlong to take arguments
+* Modify code for options
+  * be able to specify path to project directory as an argument
+  * be able to choose between loading variables from a file or interactively (as it is now)
+  * be able to display a list of commands
 
 ##Dependencies
 Ruby 2.0 or higher
-
-Unix-based operating system
 
 ##Credits
 Thanks to the Ruby community for the valuable learning resources.
