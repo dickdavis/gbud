@@ -1,5 +1,5 @@
 require 'test/unit'
-require '../gbud/lib/gbud/getinfo.rb'
+require 'gbud'
 
 # test methods in getinfo module
 class GetInfoTest < Test::Unit::TestCase
@@ -7,7 +7,7 @@ class GetInfoTest < Test::Unit::TestCase
     with_stdin do |user|
       user.puts 'test'
       assert_equal(
-        GetInfo.new('Test prompt =>').take_input, 'test')
+        GetInfo.new('').take_input, 'test')
     end
   end
 
@@ -15,7 +15,7 @@ class GetInfoTest < Test::Unit::TestCase
     with_stdin do |user|
       user.puts 'Y'
       assert_equal(
-        GetInfo.new('Test prompt =>').verify_input, true)
+        GetInfo.new('').verify_input, true)
     end
   end
 
@@ -23,7 +23,7 @@ class GetInfoTest < Test::Unit::TestCase
     with_stdin do |user|
       user.puts 'Y'
       assert_equal(
-        GetInfo.new('Test prompt =>').verify_input, true)
+        GetInfo.new('').verify_input, true)
     end
   end
 
@@ -31,7 +31,7 @@ class GetInfoTest < Test::Unit::TestCase
     with_stdin do |user|
       user.puts 'N'
       assert_equal(
-        GetInfo.new('Test prompt =>').verify_input, false)
+        GetInfo.new('').verify_input, false)
     end
   end
 
@@ -39,7 +39,7 @@ class GetInfoTest < Test::Unit::TestCase
     with_stdin do |user|
       user.puts 'test'
       user.puts 'Y'
-      assert_equal(GetInfo.new('Test prompt =>').user_prompt, 'test')
+      assert_equal(GetInfo.new('').user_prompt, 'test')
     end
   end
 

@@ -1,7 +1,7 @@
 # gbud base script
 # Copyright 2015 Richard Davis GPL v3
 require 'fileutils'
-require '../gbud/lib/gbud/getinfo.rb'
+require 'gbud/getinfo'
 
 p_name = GetInfo.new('Project name => ').user_prompt
 version = GetInfo.new('Version number => ').user_prompt
@@ -44,6 +44,27 @@ e.puts 'end'
 e.close
 File.chmod(0755, "#{p_name}/bin/#{p_name}")
 
+# TODO: WRITE AUTOMATED TESTS
+t = File.new("#{p_name}/test/test_#{p_name}.rb", 'w+')
+t.puts "require 'test/unit'"
+t.puts "require '#{p_name}'"
+t.puts 'class HelloWorldTest < Test::Unit::TestCase'
+t.puts "\tdef test_hello_world"
+t.puts "\t\t\tassert_equal(HelloWorld.hello, 'Hello world!')"
+t.puts "\tend"
+t.puts 'end'
+t.close
+
+# writes Rakefile
+r = File.new("#{p_name}/Rakefile", 'w+')
+r.puts 'require \'rake/testtask\''
+r.puts 'Rake::TestTask.new do |t|'
+r.puts "\tt.libs << 'test'"
+r.puts 'end'
+r.puts 'desc \'Run tests\''
+r.puts 'task :default => :test'
+r.close
+
 # writes gemspec
 gemspec = File.new("#{p_name}/#{p_name}.gemspec", 'w+')
 gemspec.puts '# -*- encoding: utf-8 -*-'
@@ -64,28 +85,6 @@ gemspec.puts "\ts.executables   = ['#{p_name}']"
 gemspec.puts "\ts.test_files    = ['test/test_#{p_name}.rb']"
 gemspec.puts "\ts.require_path  = ['lib']"
 gemspec.puts 'end'
-
-# writes Rakefile
-r = File.new("#{p_name}/Rakefile", 'w+')
-r.puts 'require \'rake/testtask\''
-r.puts 'Rake::TestTask.new do |t|'
-r.puts "\tt.libs << 'test'"
-r.puts 'end'
-r.puts 'desc \'Run tests\''
-r.puts 'task :default => :test'
-r.close
-
-# TODO: WRITE AUTOMATED TESTS
-t = File.new("#{p_name}/test/test_#{p_name}.rb", 'w+')
-t.puts "require 'test/unit'"
-t.puts "require '#{p_name}/base'"
-t.puts 'class GetInfoTest < Test::Unit::TestCase'
-t.puts "\tdef test_take_input"
-t.puts "\t\t\tuser.puts 'test'"
-t.puts "\t\t\tassert_equal(HelloWorld.hello, 'Hello world!')"
-t.puts "\tend"
-t.puts 'end'
-t.close
 
 # runs automated tests
 #system 'cd '
