@@ -32,6 +32,7 @@ gem install ./gbud-0.0.1.gem
   * Rakefile
 5. Navigate to the generated project directory
 6. Execute `rake test` to verify everything is good to go
+7. Happy coding!
 
 ##TODO
 * Write RDoc's
