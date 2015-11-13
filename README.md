@@ -16,7 +16,7 @@ Alternatively, you could build from source:
 git clone https://github.com/d3d1rty/gbud.git
 cd gbud
 gem build gbud.gemspec
-gem install ./gbud-0.0.1.gem
+gem install ./gbud-0.0.2.gem
 ```
 
 ##Usage
