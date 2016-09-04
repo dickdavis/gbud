@@ -80,9 +80,9 @@ gemspec.puts "\ts.homepage      = '#{site}'"
 gemspec.puts "\ts.summary       = '#{summary}'"
 gemspec.puts "\ts.description   = <<-EOF\n\t\t#{description}\nEOF"
 gemspec.puts "\ts.license       = '#{license}'"
-gemspec.puts "\ts.files         = ['lib/#{p_name}.rb']"
+gemspec.puts "\ts.files         = Dir['lib/**/*.rb']"
 gemspec.puts "\ts.executables   = ['#{p_name}']"
-gemspec.puts "\ts.test_files    = ['test/test_#{p_name}.rb']"
+gemspec.puts "\ts.test_files    = Dir['test/**/*.rb']"
 gemspec.puts "\ts.require_path  = ['lib']"
 gemspec.puts 'end'
 
