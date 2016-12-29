@@ -1,4 +1,6 @@
 #gbud
+[![Gem Version](https://badge.fury.io/rb/gbud.svg)](https://badge.fury.io/rb/gbud)
+
 ##About
 This project aims to simplify the initialization of a Ruby project by setting up the appropriate directories and files needed. By default, projects created by `gbud` are GPL-3.0 compliant, although support for the LGPL-3.0 is on the way; `gbud` will never support instantiating non-free projects.
 
