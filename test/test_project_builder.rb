@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 # Copyright 2016 Richard Davis
 #
 # This file is part of gbud.
@@ -16,9 +15,19 @@
 # You should have received a copy of the GNU General Public License
 # along with gbud.  If not, see <http://www.gnu.org/licenses/>.
 
-begin
-  require 'gbud'
-rescue LoadError
-  require 'rubygems'
-  require 'gbud'
+require 'minitest/autorun'
+require_relative '../lib/gbud/project_builder'
+
+class ProjectBuilderTest < Minitest::Test
+  def setup
+    metadata = {
+      name: 'gbud-test',
+      authors: 'Richard Davis, d3d1rty',
+      email: 'rvdavis@member.fsf.org',
+      url: 'https://test.com',
+      summary: 'This is a test summary.',
+      description: 'This is a test description.'
+    }
+    @builder = GBud::ProjectBuilder.new metadata, false
+  end
 end

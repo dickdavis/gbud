@@ -1,0 +1,40 @@
+# -*- encoding: utf-8 -*-
+# Copyright <%= Date.today.year %> <%= metadata[:authors].join(', ') %>
+#
+# This file is part of <%= @metadata[:name] %>.
+#
+# <%= @metadata[:name] %> is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# <%= @metadata[:name] %> is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with <%= @metadata[:name] %>.  If not, see <http://www.gnu.org/licenses/>.
+
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+
+Gem::Specification.new do |s|
+  s.name          = '<%= @metadata[:name] %>'
+  s.version       = '<%= @metadata[:version] %>'
+  s.platform      = Gem::Platform::RUBY
+  s.authors       = <%= @metadata[:authors] %>
+  s.email         = '<%= @metadata[:email] %>'
+  s.homepage      = '<%= @metadata[:url] %>'
+  s.summary       = '<%= @metadata[:summary] %>'
+  s.description   = <<-EOF
+  <%= @metadata[:description] %>
+EOF
+  s.license       = '<%= @metadata[:license] %>'
+  s.files         = Dir['lib/**/*']
+  <% if @cli == true %>
+    s.executables   = ['<%= @metadata[:name] %>']
+  <% end %>
+  s.test_files    = Dir['test/**/*']
+  s.require_path  = ['lib']
+end

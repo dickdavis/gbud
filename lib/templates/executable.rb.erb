@@ -1,24 +1,24 @@
-#!/usr/bin/env ruby
-# Copyright 2016 Richard Davis
+#!/usr/bin/env ruby'
+# Copyright <%= Date.today.year %> <%= metadata[:authors].join(', ') %>
 #
-# This file is part of gbud.
+# This file is part of <%= @metadata[:name] %>.
 #
-# gbud is free software: you can redistribute it and/or modify
+# <%= @metadata[:name] %> is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
 #
-# gbud is distributed in the hope that it will be useful,
+# <%= @metadata[:name] %> is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with gbud.  If not, see <http://www.gnu.org/licenses/>.
+# along with <%= @metadata[:name] %>.  If not, see <http://www.gnu.org/licenses/>.
 
 begin
-  require 'gbud'
+  require '<%= @metadata[:name] %>'
 rescue LoadError
   require 'rubygems'
-  require 'gbud'
+  require '<%= @metadata[:name] %>'
 end
