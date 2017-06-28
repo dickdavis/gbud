@@ -20,6 +20,6 @@ require '<%= @metadata[:name] %>'
 
 class HelloTest < Minitest::Test
   def test_hello
-    assert_equal('Hello, friend.', <%= <%= @metadata[:name].split('-').each{ |s| s.capitalize! }.join %>::Hello.greeting
+    assert_equal('Hello, friend.', <%= @metadata[:name].split('-').each{ |s| s.capitalize! }.join %>::Hello.greeting)
   end
 end

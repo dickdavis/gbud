@@ -15,33 +15,10 @@
 # You should have received a copy of the GNU General Public License
 # along with gbud.  If not, see <http://www.gnu.org/licenses/>.
 
-module GBud
-  ##
-  # UserPrompt
-  # methods to prompt and confirm user input
-  #
-  module UserPrompt
-    @value = ''
+source 'https://rubygems.org'
+ruby '2.3.1'
 
-    def self.get_value(prompt)
-      prompt_user prompt
-      @value
-    end
-
-    def self.prompt_user(prompt)
-      loop do
-        print prompt
-        @value = gets.chomp.to_s
-        break if confirm_input
-      end
-    end
-
-    def self.confirm_input
-      puts "You have entered: #{@value}"
-      print 'Is this correct? (Y/N) => '
-      confirm = gets.chomp.to_s.upcase
-      return false unless confirm == 'Y'
-      true
-    end
-  end
-end
+gem 'pry', '~> 0.10.4'
+gem 'rake', '~> 12.0'
+gem 'minitest', '~> 5.0'
+gem 'rubocop', '~> 0.46.0'

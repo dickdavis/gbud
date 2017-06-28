@@ -16,6 +16,10 @@
 # along with gbud.  If not, see <http://www.gnu.org/licenses/>.
 
 module GBud
+  ##
+  # ProjectMetadata
+  # represents the metadata for a project
+  #
   class ProjectMetadata
     attr_reader :name,
                 :summary,
@@ -25,34 +29,27 @@ module GBud
                 :url,
                 :version,
                 :license
+    attr_writer :summary, :description
 
     def initialize
       @version = '0.0.1'
       @license = 'GPL-3.0'
     end
 
-    def name= name
+    def name=(name)
       @name = name unless validate_name(name).nil?
     end
 
-    def authors= authors
+    def authors=(authors)
       @authors = authors.split(', ')
     end
 
-    def email= email
+    def email=(email)
       @email = email unless validate_email(email).nil?
     end
 
-    def url= url
+    def url=(url)
       @url = url unless validate_url(url).nil?
-    end
-
-    def summary= summary
-      @summary = summary
-    end
-
-    def description= description
-      @description = description
     end
 
     def to_hash
@@ -68,16 +65,16 @@ module GBud
       }
     end
 
-    def validate_name name
+    def validate_name(name)
       /\A[a-z][a-z0-9_\-]*\Z/i =~ name
     end
 
-    def validate_email email
+    def validate_email(email)
       /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i =~ email
     end
 
-    def validate_url url
-      /https?:\/\/[\S]+/ =~ url
+    def validate_url(url)
+      %r{https?:\/\/[\S]+} =~ url
     end
   end
 end

@@ -16,16 +16,13 @@
 # along with gbud.  If not, see <http://www.gnu.org/licenses/>.
 
 module GBud
+  ##
+  # ProjectBuilder
+  # represents the engine that constructs a project
+  #
   class ProjectBuilder
     attr_reader :metadata, :cli, :files, :paths
 
-    ##
-    # Instantiates the ProjectBuilder object using information provided
-    #
-    # metadata : a hash containing the name, summary, description, authors, email
-    #            and URL for the project to be initialized
-    # cli      : specifies the need for a CLI option parser and executable
-    #
     def initialize metadata, cli
       @metadata = metadata
       @cli = cli
@@ -58,9 +55,6 @@ module GBud
 
     private
 
-    ##
-    # make_directories
-    # Creates the project directory structure
     def make_directories
       @paths.each do |path, dir|
         FileUtils.mkdir_p(dir)
@@ -102,7 +96,7 @@ module GBud
       path = File.expand_path(File.join(File.dirname(__FILE__),
                                         '..',
                                         'templates',
-                                        "#{template.to_s}.rb.erb"))
+                                        "#{template}.rb.erb"))
       ERB.new(File.read(path)).result(binding)
     end
 
