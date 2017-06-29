@@ -1,5 +1,6 @@
 # gbud
 [![Gem Version](https://badge.fury.io/rb/gbud.svg)](https://badge.fury.io/rb/gbud)
+[Documentation](https://d3d1rty.github.io/gbud/)
 
 ## Table of Contents
 * About
