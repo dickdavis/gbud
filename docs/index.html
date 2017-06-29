@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>gbud Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./README_md.html">README</a>
+  
+  </ul>
+</div>
+
+    <div id="classindex-section" class="nav-section">
+  <h3>Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./GBud.html">GBud</a>
+  
+    <li><a href="./GBud/ProjectBuilder.html">GBud::ProjectBuilder</a>
+  
+    <li><a href="./GBud/ProjectMetadata.html">GBud::ProjectMetadata</a>
+  
+    <li><a href="./GBud/UserPrompt.html">GBud::UserPrompt</a>
+  
+    <li><a href="./ProjectBuilderTest.html">ProjectBuilderTest</a>
+  
+    <li><a href="./ProjectMetadataTest.html">ProjectMetadataTest</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main">
+
+
+<h1 id="label-gbud">gbud<span><a href="#label-gbud">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p><a href="https://badge.fury.io/rb/gbud"><img
+src="https://badge.fury.io/rb/gbud.svg"></a></p>
+
+<h2 id="label-Table+of+Contents">Table of Contents<span><a href="#label-Table+of+Contents">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>About</p>
+</li><li>
+<p>Why use gbud?</p>
+</li><li>
+<p>Why not bundler?</p>
+</li><li>
+<p>Getting started</p>
+<ul><li>
+<p>Installation</p>
+</li><li>
+<p>Usage</p>
+</li></ul>
+</li><li>
+<p>Contributing</p>
+<ul><li>
+<p>Code of Conduct</p>
+</li><li>
+<p>Code Style</p>
+</li><li>
+<p>Documentation</p>
+</li><li>
+<p>Testing</p>
+</li></ul>
+</li><li>
+<p>TODO</p>
+</li></ul>
+
+<h2 id="label-About">About<span><a href="#label-About">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>This project aims to simplify the initialization of a Ruby project by
+setting up the appropriate directories and files needed. By default,
+projects created by <code>gbud</code> are GPL-3.0 compliant, although
+support for the LGPL-3.0 is on the way; <code>gbud</code> will never
+support instantiating non-free projects.</p>
+
+<h2 id="label-Why+Use+gbud-3F">Why Use gbud?<span><a href="#label-Why+Use+gbud-3F">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p><code>gbud</code> rapidly scaffolds a new gem for you, allowing you to skip
+the tedious part of building out a gem manually. It automatically protects
+the freedom of your code by including the GPL with your project, providing
+command-line options for users to get copyright and warranty information
+for your project, as well as inserting boilerplate GPL copyright notices on
+each of the source files for the project. Future efforts will allow
+selection of the LGPL as an alternative to the GPL.</p>
+
+<h2 id="label-Why+Not+bundler-3F">Why Not bundler?<span><a href="#label-Why+Not+bundler-3F">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p><code>gbud</code> does not aim to solve the same problem that
+<code>bundler</code> solves, and there is no reason why you can&#39;t
+instantiate a project with <code>gbud</code> and use <code>bundler</code>
+for dependency management. However, <code>bundler</code> did not meet my
+requirements for creating a project from scratch (i.e. the way <em>I want
+it done</em>), thus I produced this gem to meet my own need. I hope it also
+proves useful to you, and anyone is welcome to recommending or implementing
+reasonable changes and enhancements to <code>gbud</code>.</p>
+
+<h2 id="label-Getting+Started">Getting Started<span><a href="#label-Getting+Started">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Installation">Installation<span><a href="#label-Installation">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>To install from RubyGems, execute:</p>
+
+<p><code>gem install gbud</code></p>
+
+<p>Alternatively, you could build from source:</p>
+
+<pre>git clone https://github.com/d3d1rty/gbud.git
+cd gbud
+gem build gbud.gemspec
+gem install ./gbud-0.0.4.gem</pre>
+
+<h3 id="label-Usage">Usage<span><a href="#label-Usage">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Navigate to the directory you want to hold the project</p>
+
+<p>Execute command <code>gbud -n NAME</code> where <code>NAME</code> is the
+name for your project</p>
+
+<p>Answer the prompts to set the required information for the project</p>
+
+<p>Based off your input, gbud will generate</p>
+<ul><li>
+<p>a skeleton directory for the project</p>
+</li><li>
+<p>an executable (if CLI is specified)</p>
+</li><li>
+<p>main script</p>
+</li><li>
+<p>library file</p>
+</li><li>
+<p>test script</p>
+</li><li>
+<p>gemspec</p>
+</li><li>
+<p>Gemfile</p>
+</li><li>
+<p>Rakefile</p>
+</li><li>
+<p><a href="README_md.html">README</a></p>
+</li><li>
+<p>LICENSE</p>
+</li></ul>
+
+<p>Navigate to the generated project directory</p>
+
+<p>Get the dependencies with <code>bundle install</code></p>
+
+<p>Execute <code>rake test</code> to verify everything is good to go</p>
+
+<h2 id="label-Contributing">Contributing<span><a href="#label-Contributing">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Code+of+Conduct">Code of Conduct<span><a href="#label-Code+of+Conduct">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>All contributions are welcome, but are merged at the discretion of the core
+contributor(s). Contributions to the project will be judged on their merits
+without respect to a contributor&#39;s publicly or privately held beliefs,
+opinions, ideology, nationality, ethnicity, or demographic. Most
+communications within the project should be limited to project planning,
+development, bugfixing, or other relevant topics; for off-topic
+discussions, contributors are expected to use good judgement and to avoid
+intentionally abusive behavior. Conflict should be resolved at the lowest
+level possible with minimal disruption to the project. Core contributor(s)
+reserve the right to request that a contributor alter their behavior,
+however, nothing in this code of conduct should be construed in such a
+manner that it infringes upon any contributor&#39;s freedom of expression.</p>
+
+<h3 id="label-Code+Style">Code Style<span><a href="#label-Code+Style">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>To keep a consistent code style, it is recommended to use <a
+href="https://github.com/bbatsov/rubocop">rubocop</a>. If you use
+<code>vim</code> and <a
+href="https://github.com/vim-syntastic/syntastic">syntastic</a>, you can
+use <code>rubocop</code> as a Ruby checker. To manually run
+<code>rubocop</code>, you can run the following commands:</p>
+
+<pre class="ruby"><span class="ruby-comment"># Run rubocop for the entire project</span>
+<span class="ruby-identifier">bundle</span> <span class="ruby-identifier">exec</span> <span class="ruby-identifier">rubocop</span>
+<span class="ruby-comment"># Run rubocop for a specific file</span>
+<span class="ruby-identifier">bundle</span> <span class="ruby-identifier">exec</span> <span class="ruby-identifier">rubocop</span> <span class="ruby-identifier">foo</span><span class="ruby-operator">/</span><span class="ruby-identifier">bar</span>.<span class="ruby-identifier">rb</span>
+</pre>
+
+<h3 id="label-Documentation">Documentation<span><a href="#label-Documentation">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Comment any code contributions according to the existing conventions within
+the project. Reference the examples listed below:</p>
+
+<p>Example top-level comment:</p>
+
+<pre class="ruby"><span class="ruby-comment">##</span>
+<span class="ruby-comment"># = ClassNameGoesHere</span>
+<span class="ruby-comment"># Author::    Dick Davis (+/- individual contributors)</span>
+<span class="ruby-comment"># Copyright:: Copyright 2017 Dick Davis</span>
+<span class="ruby-comment"># License::   GNU Public License 3</span>
+<span class="ruby-comment">#</span>
+<span class="ruby-comment"># This is a class that is something and does something.</span>
+</pre>
+
+<p>Example method comment:</p>
+
+<pre class="ruby"><span class="ruby-comment">##</span>
+<span class="ruby-comment"># This is a method that does something</span>
+</pre>
+
+<p>Documentation should be regenerated prior to merging any branches into
+master. The latest <a
+href="https://d3d1rty.github.io/gbud/">documentation</a> auto-sources off
+the <code>docs/</code> folder on the master branch. For more information on
+RDoc, go <a href="https://rdoc.github.io/rdoc/index.html">here</a>.</p>
+
+<pre class="ruby"><span class="ruby-comment"># Run custom rake task to regenerate RDoc documentation</span>
+<span class="ruby-identifier">rake</span> <span class="ruby-identifier">rdoc</span>
+</pre>
+
+<h3 id="label-Testing">Testing<span><a href="#label-Testing">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Integration tests should be written for all classes and methods. The test
+suite can be run manually or automatically with the command <code>bundle
+exec rake test</code>.</p>
+
+<h2 id="label-TODO">TODO<span><a href="#label-TODO">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Decouple template and project builder logic</p>
+</li><li>
+<p>Write tests for <code>FileTemplate</code> (to be implemented) and
+<code>ProjectBuilder</code> classes</p>
+</li><li>
+<p>Implement <code>--cli</code> and <code>--no-cli</code> options</p>
+</li><li>
+<p>Implement <code>--lgpl</code> option for generating LGPL protected code</p>
+</li></ul>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://rdoc.github.io/rdoc">RDoc</a> 5.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

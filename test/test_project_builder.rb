@@ -1,6 +1,10 @@
-# Copyright 2016 Richard Davis
+##
+# = ProjectBuilderTest
+# Author::    Richard Davis
+# Copyright:: Copyright 2017 Richard Davis
+# License::   GNU Public License 3
 #
-# This file is part of gbud.
+# Tests for GBud::ProjectBuilder class functionality.
 #
 # gbud is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by

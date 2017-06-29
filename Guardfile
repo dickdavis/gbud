@@ -1,10 +1,10 @@
 ##
-# = Rakefile
+# = Guardfile
 # Author::    Richard Davis
 # Copyright:: Copyright 2017 Richard Davis
 # License::   GNU Public License 3
 #
-# The Rakefile contains tasks to be executed using the rake utility.
+# The Guardfile tells the guard programs which files/directories to watch.
 #
 # gbud is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -19,23 +19,11 @@
 # You should have received a copy of the GNU General Public License
 # along with gbud.  If not, see <http://www.gnu.org/licenses/>.
 
-require 'rake/testtask'
-require 'rdoc/task'
+directories(%w[lib test])\
+  .select { |d| Dir.exist?(d) ? d : UI.warning("Directory #{d} does not exist") }
 
-Rake::TestTask.new do |t|
-  t.libs << 'test'
-end
-
-desc 'Run tests'
-task default: :test
-
-RDoc::Task.new :rdoc do |rdoc|
-  rdoc.main = 'README.md'
-  rdoc.rdoc_files.include('README.md',
-                          './lib/*.rb',
-                          './lib/**/*.rb',
-                          './test/**/*.rb')
-  rdoc.title = 'gbud Documentation'
-  rdoc.rdoc_dir = 'docs/'
-  rdoc.options << '--all'
+guard :minitest, spring: true do
+  # with Minitest::Unit
+  watch(%r{^test/(.*)\/?test_(.*)\.rb$})
+  watch(%r{^lib/(.+)\.rb$})                               { |m| "test/lib/#{m[1]}_test.rb" }
 end

@@ -1,7 +1,11 @@
 # -*- encoding: utf-8 -*-'
-# Copyright 2016 Richard Davis
+##
+# = Gemfile
+# Author::    Richard Davis
+# Copyright:: Copyright 2017 Richard Davis
+# License::   GNU Public License 3
 #
-# This file is part of gbud.
+# The gemspec contains the metadata used in building the gem.
 #
 # gbud is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by

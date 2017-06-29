@@ -1,6 +1,10 @@
-# Copyright 2016 Richard Davis
+##
+# = Gemfile
+# Author::    Richard Davis
+# Copyright:: Copyright 2017 Richard Davis
+# License::   GNU Public License 3
 #
-# This file is part of gbud.
+# The Gemfile contains the dependencies for the application.
 #
 # gbud is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -16,9 +20,20 @@
 # along with gbud.  If not, see <http://www.gnu.org/licenses/>.
 
 source 'https://rubygems.org'
-ruby '2.3.1'
+ruby '2.4.1'
 
-gem 'pry', '~> 0.10.4'
-gem 'rake', '~> 12.0'
-gem 'minitest', '~> 5.0'
-gem 'rubocop', '~> 0.46.0'
+group :development do
+  # Minitest for unit tests
+  gem 'minitest', '~> 5.0'
+  # Use Guard to run automated tests
+  gem 'guard', '~> 2.14', '>= 2.14.1'
+  gem 'guard-minitest', '~> 2.4', '>= 2.4.6'
+  # Pry provides a convenient debugging console
+  gem 'pry', '~> 0.10.4'
+  # Rake executes tasks defined in the Rakefile
+  gem 'rake', '~> 12.0'
+  # Rubocop for code style guidelines
+  gem 'rubocop', '~> 0.48.1'
+  # RDoc for generating documentation
+  gem 'rdoc', '~> 5.1'
+end

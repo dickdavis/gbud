@@ -1,6 +1,10 @@
-# Copyright 2016 Richard Davis
+##
+# = GBud
+# Author::    Richard Davis
+# Copyright:: Copyright 2017 Richard Davis
+# License::   GNU Public License 3
 #
-# This file is part of gbud.
+# Module for namespacing application classes.
 #
 # gbud is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -14,12 +18,15 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with gbud.  If not, see <http://www.gnu.org/licenses/>.
-
 module GBud
   ##
-  # ProjectMetadata
-  # represents the metadata for a project
+  # = ProjectMetadata
+  # Author::    Richard Davis
+  # Copyright:: Copyright 2017 Richard Davis
+  # License::   GNU Public License 3
   #
+  # The means by which user input describing project metadata is
+  # captured to be used by GBud::ProjectBuilder objects.
   class ProjectMetadata
     attr_reader :name,
                 :summary,

@@ -1,6 +1,10 @@
-# Copyright 2016 Richard Davis
+##
+# = GBud
+# Author::    Richard Davis
+# Copyright:: Copyright 2017 Richard Davis
+# License::   GNU Public License 3
 #
-# This file is part of gbud.
+# Module for namespacing application classes.
 #
 # gbud is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -14,12 +18,15 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with gbud.  If not, see <http://www.gnu.org/licenses/>.
-
 module GBud
   ##
-  # ProjectBuilder
-  # represents the engine that constructs a project
+  # = ProjectBuilder
+  # Author::    Richard Davis
+  # Copyright:: Copyright 2017 Richard Davis
+  # License::   GNU Public License 3
   #
+  # The engine that is instantiated to build out the project directory
+  # skeleton and basic files using templates.
   class ProjectBuilder
     attr_reader :metadata, :cli, :files, :paths
 
@@ -72,7 +79,7 @@ module GBud
     end
 
     def map_template template
-      dir = case template
+      case template
         when :readme
           @paths[:project_dir]
         when :gemspec

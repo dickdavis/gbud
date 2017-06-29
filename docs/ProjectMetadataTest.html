@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class ProjectMetadataTest - gbud Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Minitest::Test
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-setup">#setup</a>
+    
+    <li ><a href="#method-i-test_authors_mutator">#test_authors_mutator</a>
+    
+    <li ><a href="#method-i-test_description_mutator">#test_description_mutator</a>
+    
+    <li ><a href="#method-i-test_license_accessor">#test_license_accessor</a>
+    
+    <li ><a href="#method-i-test_name_mutator_negative">#test_name_mutator_negative</a>
+    
+    <li ><a href="#method-i-test_name_mutator_positive">#test_name_mutator_positive</a>
+    
+    <li ><a href="#method-i-test_summary_mutator">#test_summary_mutator</a>
+    
+    <li ><a href="#method-i-test_to_hash">#test_to_hash</a>
+    
+    <li ><a href="#method-i-test_validate_email_negative">#test_validate_email_negative</a>
+    
+    <li ><a href="#method-i-test_validate_email_positive">#test_validate_email_positive</a>
+    
+    <li ><a href="#method-i-test_validate_name_negative">#test_validate_name_negative</a>
+    
+    <li ><a href="#method-i-test_validate_name_positive">#test_validate_name_positive</a>
+    
+    <li ><a href="#method-i-test_validate_url_negative">#test_validate_url_negative</a>
+    
+    <li ><a href="#method-i-test_validate_url_positive">#test_validate_url_positive</a>
+    
+    <li ><a href="#method-i-test_version_accessor">#test_version_accessor</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-ProjectMetadataTest">
+  <h1 id="class-ProjectMetadataTest" class="class">
+    class ProjectMetadataTest
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-setup" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">setup</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="setup-source">
+            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">setup</span>
+  <span class="ruby-ivar">@metadata</span> = <span class="ruby-constant">GBud</span><span class="ruby-operator">::</span><span class="ruby-constant">ProjectMetadata</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_authors_mutator" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_authors_mutator</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_authors_mutator-source">
+            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_authors_mutator</span>
+  <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">authors</span> = <span class="ruby-string">&#39;Richard Davis, d3d1rty&#39;</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-string">&#39;Richard Davis&#39;</span>, <span class="ruby-string">&#39;d3d1rty&#39;</span>], <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">authors</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_description_mutator" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_description_mutator</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_description_mutator-source">
+            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_description_mutator</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&#39;This is a test&#39;</span>, <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">description</span> = <span class="ruby-string">&#39;This is a test&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_license_accessor" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_license_accessor</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_license_accessor-source">
+            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_license_accessor</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&#39;GPL-3.0&#39;</span>, <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">license</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_name_mutator_negative" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_name_mutator_negative</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_name_mutator_negative-source">
+            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_name_mutator_negative</span>
+  <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">name</span> = <span class="ruby-string">&#39;-test&#39;</span>
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">name</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_name_mutator_positive" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_name_mutator_positive</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_name_mutator_positive-source">
+            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_name_mutator_positive</span>
+  <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">name</span> = <span class="ruby-string">&#39;gbud-test&#39;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&#39;gbud-test&#39;</span>, <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">name</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_summary_mutator" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_summary_mutator</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_summary_mutator-source">
+            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_summary_mutator</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&#39;This is a test&#39;</span>, <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">summary</span> = <span class="ruby-string">&#39;This is a test&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_to_hash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_to_hash</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_to_hash-source">
+            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_to_hash</span>
+  <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">name</span> = <span class="ruby-string">&#39;gbud-test&#39;</span>
+  <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">authors</span> = <span class="ruby-string">&#39;Richard Davis, d3d1rty&#39;</span>
+  <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">email</span> = <span class="ruby-string">&#39;rvdavis@member.fsf.org&#39;</span>
+  <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">url</span> = <span class="ruby-string">&#39;https://test.com&#39;</span>
+  <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">summary</span> = <span class="ruby-string">&#39;This is a test summary.&#39;</span>
+  <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">description</span> = <span class="ruby-string">&#39;This is a test description.&#39;</span>
+  <span class="ruby-identifier">assert_instance_of</span> <span class="ruby-constant">Hash</span>, <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">to_hash</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_validate_email_negative" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_validate_email_negative</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_validate_email_negative-source">
+            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_validate_email_negative</span>
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">validate_email</span>(<span class="ruby-string">&#39;rvdavis&#39;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_validate_email_positive" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_validate_email_positive</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_validate_email_positive-source">
+            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_validate_email_positive</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">0</span>, <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">validate_email</span>(<span class="ruby-string">&#39;rvdavis@member.fsf.org&#39;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_validate_name_negative" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_validate_name_negative</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_validate_name_negative-source">
+            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_validate_name_negative</span>
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">validate_name</span>(<span class="ruby-string">&#39;-fail&#39;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_validate_name_positive" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_validate_name_positive</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_validate_name_positive-source">
+            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_validate_name_positive</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">0</span>, <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">validate_name</span>(<span class="ruby-string">&#39;test-gem&#39;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_validate_url_negative" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_validate_url_negative</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_validate_url_negative-source">
+            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_validate_url_negative</span>
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">validate_url</span>(<span class="ruby-string">&#39;github.com&#39;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_validate_url_positive" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_validate_url_positive</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_validate_url_positive-source">
+            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_validate_url_positive</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">0</span>, <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">validate_url</span>(<span class="ruby-string">&#39;https://github.com/d3d1rty/gbud&#39;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_version_accessor" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_version_accessor</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test_version_accessor-source">
+            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 77</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_version_accessor</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&#39;0.0.1&#39;</span>, <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">version</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://rdoc.github.io/rdoc">RDoc</a> 5.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
