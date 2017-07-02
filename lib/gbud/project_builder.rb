@@ -1,23 +1,3 @@
-##
-# = GBud
-# Author::    Richard Davis
-# Copyright:: Copyright 2017 Richard Davis
-# License::   GNU Public License 3
-#
-# Module for namespacing application classes.
-#
-# gbud is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# gbud is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with gbud.  If not, see <http://www.gnu.org/licenses/>.
 module GBud
   ##
   # = ProjectBuilder
@@ -28,10 +8,20 @@ module GBud
   # The engine that is instantiated to build out the project directory
   # skeleton and basic files using templates.
   class ProjectBuilder
-    attr_reader :metadata, :cli, :files, :paths
+    # Project metadata information supplied by user
+    attr_reader :metadata
+    # Option for making project executable
+    attr_reader :cli
+    # Hash containing file names for project files
+    attr_reader :files
+    # Hash specifying project directories
+    attr_reader :paths
 
+    ##
+    # Instantiates a ProjectBuilder object
     def initialize metadata, cli
       @metadata = metadata
+
       @cli = cli
       @files = {
         readme: 'README.md',
@@ -54,6 +44,8 @@ module GBud
       end
     end
 
+    ##
+    # Builds the project
     def build
       make_directories
       make_files
@@ -62,12 +54,16 @@ module GBud
 
     private
 
+    ##
+    # Creates the project directories
     def make_directories
       @paths.each do |path, dir|
         FileUtils.mkdir_p(dir)
       end
     end
 
+    ##
+    # Makes the files using templates
     def make_files
       @files.each do |template, filename|
         directory = map_template template
@@ -78,6 +74,8 @@ module GBud
       end
     end
 
+    ##
+    # Maps each templated file to correct directory
     def map_template template
       case template
         when :readme
@@ -99,6 +97,8 @@ module GBud
       end
     end
 
+    ##
+    # Renders the templates into files
     def render template
       path = File.expand_path(File.join(File.dirname(__FILE__),
                                         '..',
@@ -107,6 +107,8 @@ module GBud
       ERB.new(File.read(path)).result(binding)
     end
 
+    ##
+    # Flags the CLI file as executable
     def make_executable
       File.chmod(0755, "#{@paths[:project_bin_dir]}#{@files[:executable]}")
     end

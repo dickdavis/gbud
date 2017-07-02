@@ -144,7 +144,7 @@ used by <a href="ProjectBuilder.html">GBud::ProjectBuilder</a> objects.</p>
 
         <div class="method-description">
         
-        
+        <p>List of the project authors</p>
         
         </div>
       </div>
@@ -157,7 +157,7 @@ used by <a href="ProjectBuilder.html">GBud::ProjectBuilder</a> objects.</p>
 
         <div class="method-description">
         
-        
+        <p>A longer description of the project</p>
         
         </div>
       </div>
@@ -170,7 +170,7 @@ used by <a href="ProjectBuilder.html">GBud::ProjectBuilder</a> objects.</p>
 
         <div class="method-description">
         
-        
+        <p>Email address for project</p>
         
         </div>
       </div>
@@ -183,7 +183,7 @@ used by <a href="ProjectBuilder.html">GBud::ProjectBuilder</a> objects.</p>
 
         <div class="method-description">
         
-        
+        <p>The project license (defaults to GPL-3.0)</p>
         
         </div>
       </div>
@@ -196,7 +196,7 @@ used by <a href="ProjectBuilder.html">GBud::ProjectBuilder</a> objects.</p>
 
         <div class="method-description">
         
-        
+        <p>The name of the project</p>
         
         </div>
       </div>
@@ -209,7 +209,7 @@ used by <a href="ProjectBuilder.html">GBud::ProjectBuilder</a> objects.</p>
 
         <div class="method-description">
         
-        
+        <p>A short project summary</p>
         
         </div>
       </div>
@@ -222,7 +222,7 @@ used by <a href="ProjectBuilder.html">GBud::ProjectBuilder</a> objects.</p>
 
         <div class="method-description">
         
-        
+        <p>The URL for project</p>
         
         </div>
       </div>
@@ -235,7 +235,7 @@ used by <a href="ProjectBuilder.html">GBud::ProjectBuilder</a> objects.</p>
 
         <div class="method-description">
         
-        
+        <p>The project version (defaults to 0.0.1)</p>
         
         </div>
       </div>
@@ -263,13 +263,13 @@ used by <a href="ProjectBuilder.html">GBud::ProjectBuilder</a> objects.</p>
 
         <div class="method-description">
           
-          
+          <p>Instantiates a <a href="ProjectMetadata.html">ProjectMetadata</a> object</p>
           
           
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/gbud/project_metadata.rb, line 41</span>
+            <pre><span class="ruby-comment"># File lib/gbud/project_metadata.rb, line 30</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
   <span class="ruby-ivar">@version</span> = <span class="ruby-string">&#39;0.0.1&#39;</span>
   <span class="ruby-ivar">@license</span> = <span class="ruby-string">&#39;GPL-3.0&#39;</span>
@@ -305,13 +305,13 @@ used by <a href="ProjectBuilder.html">GBud::ProjectBuilder</a> objects.</p>
 
         <div class="method-description">
           
-          
+          <p>Sets the author attribute</p>
           
           
 
           
           <div class="method-source-code" id="authors-3D-source">
-            <pre><span class="ruby-comment"># File lib/gbud/project_metadata.rb, line 50</span>
+            <pre><span class="ruby-comment"># File lib/gbud/project_metadata.rb, line 43</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">authors=</span>(<span class="ruby-identifier">authors</span>)
   <span class="ruby-ivar">@authors</span> = <span class="ruby-identifier">authors</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&#39;, &#39;</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -338,13 +338,13 @@ used by <a href="ProjectBuilder.html">GBud::ProjectBuilder</a> objects.</p>
 
         <div class="method-description">
           
-          
+          <p>Sets the email attribute</p>
           
           
 
           
           <div class="method-source-code" id="email-3D-source">
-            <pre><span class="ruby-comment"># File lib/gbud/project_metadata.rb, line 54</span>
+            <pre><span class="ruby-comment"># File lib/gbud/project_metadata.rb, line 49</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">email=</span>(<span class="ruby-identifier">email</span>)
   <span class="ruby-ivar">@email</span> = <span class="ruby-identifier">email</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">validate_email</span>(<span class="ruby-identifier">email</span>).<span class="ruby-identifier">nil?</span>
 <span class="ruby-keyword">end</span></pre>
@@ -371,13 +371,13 @@ used by <a href="ProjectBuilder.html">GBud::ProjectBuilder</a> objects.</p>
 
         <div class="method-description">
           
-          
+          <p>Sets the name attribute</p>
           
           
 
           
           <div class="method-source-code" id="name-3D-source">
-            <pre><span class="ruby-comment"># File lib/gbud/project_metadata.rb, line 46</span>
+            <pre><span class="ruby-comment"># File lib/gbud/project_metadata.rb, line 37</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">name=</span>(<span class="ruby-identifier">name</span>)
   <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">name</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">validate_name</span>(<span class="ruby-identifier">name</span>).<span class="ruby-identifier">nil?</span>
 <span class="ruby-keyword">end</span></pre>
@@ -404,13 +404,13 @@ used by <a href="ProjectBuilder.html">GBud::ProjectBuilder</a> objects.</p>
 
         <div class="method-description">
           
-          
+          <p>Returns the object attributes as a hash</p>
           
           
 
           
           <div class="method-source-code" id="to_hash-source">
-            <pre><span class="ruby-comment"># File lib/gbud/project_metadata.rb, line 62</span>
+            <pre><span class="ruby-comment"># File lib/gbud/project_metadata.rb, line 61</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">to_hash</span>
   {
     <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@name</span>,
@@ -446,13 +446,13 @@ used by <a href="ProjectBuilder.html">GBud::ProjectBuilder</a> objects.</p>
 
         <div class="method-description">
           
-          
+          <p>Sets the url attribute</p>
           
           
 
           
           <div class="method-source-code" id="url-3D-source">
-            <pre><span class="ruby-comment"># File lib/gbud/project_metadata.rb, line 58</span>
+            <pre><span class="ruby-comment"># File lib/gbud/project_metadata.rb, line 55</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">url=</span>(<span class="ruby-identifier">url</span>)
   <span class="ruby-ivar">@url</span> = <span class="ruby-identifier">url</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">validate_url</span>(<span class="ruby-identifier">url</span>).<span class="ruby-identifier">nil?</span>
 <span class="ruby-keyword">end</span></pre>
@@ -479,13 +479,13 @@ used by <a href="ProjectBuilder.html">GBud::ProjectBuilder</a> objects.</p>
 
         <div class="method-description">
           
-          
+          <p>Validates that the given email meets criteria</p>
           
           
 
           
           <div class="method-source-code" id="validate_email-source">
-            <pre><span class="ruby-comment"># File lib/gbud/project_metadata.rb, line 79</span>
+            <pre><span class="ruby-comment"># File lib/gbud/project_metadata.rb, line 82</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">validate_email</span>(<span class="ruby-identifier">email</span>)
   <span class="ruby-regexp">/\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">email</span>
 <span class="ruby-keyword">end</span></pre>
@@ -512,13 +512,13 @@ used by <a href="ProjectBuilder.html">GBud::ProjectBuilder</a> objects.</p>
 
         <div class="method-description">
           
-          
+          <p>Validates that the given name meets criteria</p>
           
           
 
           
           <div class="method-source-code" id="validate_name-source">
-            <pre><span class="ruby-comment"># File lib/gbud/project_metadata.rb, line 75</span>
+            <pre><span class="ruby-comment"># File lib/gbud/project_metadata.rb, line 76</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">validate_name</span>(<span class="ruby-identifier">name</span>)
   <span class="ruby-regexp">/\A[a-z][a-z0-9_\-]*\Z/i</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">name</span>
 <span class="ruby-keyword">end</span></pre>
@@ -545,13 +545,13 @@ used by <a href="ProjectBuilder.html">GBud::ProjectBuilder</a> objects.</p>
 
         <div class="method-description">
           
-          
+          <p>Validates that the given url meets criteria</p>
           
           
 
           
           <div class="method-source-code" id="validate_url-source">
-            <pre><span class="ruby-comment"># File lib/gbud/project_metadata.rb, line 83</span>
+            <pre><span class="ruby-comment"># File lib/gbud/project_metadata.rb, line 88</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">validate_url</span>(<span class="ruby-identifier">url</span>)
   <span class="ruby-regexp">%r{https?:\/\/[\S]+}</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">url</span>
 <span class="ruby-keyword">end</span></pre>

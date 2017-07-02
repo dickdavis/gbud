@@ -1,5 +1,6 @@
 # gbud
 [![Gem Version](https://badge.fury.io/rb/gbud.svg)](https://badge.fury.io/rb/gbud)
+
 [Documentation](https://d3d1rty.github.io/gbud/)
 
 ## Table of Contents
@@ -24,6 +25,7 @@ This project aims to simplify the initialization of a Ruby project by setting up
 
 ## Why Not bundler?
 `gbud` does not aim to solve the same problem that `bundler` solves, and there is no reason why you can't instantiate a project with `gbud` and use `bundler` for dependency management. However, `bundler` did not meet my requirements for creating a project from scratch (i.e. the way *I want it done*), thus I produced this gem to meet my own need. I hope it also proves useful to you, and anyone is welcome to recommending or implementing reasonable changes and enhancements to `gbud`.
+
 ## Getting Started
 ### Installation
 To install from RubyGems, execute:
@@ -55,6 +57,7 @@ Based off your input, gbud will generate
   * test script
   * gemspec
   * Gemfile
+  * Guardfile
   * Rakefile
   * README
   * LICENSE
@@ -117,7 +120,7 @@ Example method comment:
 # This is a method that does something
 ```
 
-Documentation should be regenerated prior to merging any branches into master. The latest 
+Documentation should be regenerated prior to merging any branches into master. The latest
 [documentation](https://d3d1rty.github.io/gbud/) auto-sources off the `docs/` folder on
 the master branch. For more information on RDoc, go
 [here](https://rdoc.github.io/rdoc/index.html).

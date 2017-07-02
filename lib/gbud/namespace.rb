@@ -1,13 +1,10 @@
-require 'minitest/autorun'
-require_relative '../lib/gbud/project_builder'
-
 ##
-# = ProjectBuilderTest
+# = GBud
 # Author::    Richard Davis
 # Copyright:: Copyright 2017 Richard Davis
 # License::   GNU Public License 3
 #
-# Tests for GBud::ProjectBuilder class functionality.
+# Module for namespacing application classes.
 #
 # gbud is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -21,18 +18,5 @@ require_relative '../lib/gbud/project_builder'
 #
 # You should have received a copy of the GNU General Public License
 # along with gbud.  If not, see <http://www.gnu.org/licenses/>.
-class ProjectBuilderTest < Minitest::Test
-  ##
-  # Initializes test with sample data
-  def setup
-    metadata = {
-      name: 'gbud-test',
-      authors: 'Richard Davis, d3d1rty',
-      email: 'rvdavis@member.fsf.org',
-      url: 'https://test.com',
-      summary: 'This is a test summary.',
-      description: 'This is a test description.'
-    }
-    @builder = GBud::ProjectBuilder.new metadata, false
-  end
+module GBud
 end

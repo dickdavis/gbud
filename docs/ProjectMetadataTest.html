@@ -114,6 +114,35 @@
 
   <section class="description">
     
+<h1 id="class-ProjectMetadataTest-label-ProjectMetadataTest"><a href="ProjectMetadataTest.html">ProjectMetadataTest</a><span><a href="#class-ProjectMetadataTest-label-ProjectMetadataTest">&para;</a> <a href="#top">&uarr;</a></span></h1>
+<dl class="rdoc-list note-list"><dt>Author
+<dd>
+<p>Richard Davis</p>
+</dd><dt>Copyright
+<dd>
+<p>Copyright 2017 Richard Davis</p>
+</dd><dt>License
+<dd>
+<p>GNU Public License 3</p>
+</dd></dl>
+
+<p>Tests for <a href="GBud/ProjectMetadata.html">GBud::ProjectMetadata</a>
+class functionality.</p>
+
+<p>gbud is free software: you can redistribute it and/or modify it under the
+terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later
+version.</p>
+
+<p>gbud is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
+details.</p>
+
+<p>You should have received a copy of the GNU General Public License along
+with gbud.  If not, see &lt;<a
+href="http://www.gnu.org/licenses">www.gnu.org/licenses</a>/&gt;.</p>
+
   </section>
 
   
@@ -148,13 +177,13 @@
 
         <div class="method-description">
           
-          
+          <p>Initializes test with sample data</p>
           
           
 
           
           <div class="method-source-code" id="setup-source">
-            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 26</span>
+            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 27</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">setup</span>
   <span class="ruby-ivar">@metadata</span> = <span class="ruby-constant">GBud</span><span class="ruby-operator">::</span><span class="ruby-constant">ProjectMetadata</span>.<span class="ruby-identifier">new</span>
 <span class="ruby-keyword">end</span></pre>
@@ -181,13 +210,13 @@
 
         <div class="method-description">
           
-          
+          <p>Tests that user-provided author list is split into an array</p>
           
           
 
           
           <div class="method-source-code" id="test_authors_mutator-source">
-            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 64</span>
+            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 83</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_authors_mutator</span>
   <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">authors</span> = <span class="ruby-string">&#39;Richard Davis, d3d1rty&#39;</span>
   <span class="ruby-identifier">assert_equal</span> [<span class="ruby-string">&#39;Richard Davis&#39;</span>, <span class="ruby-string">&#39;d3d1rty&#39;</span>], <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">authors</span>
@@ -215,13 +244,13 @@
 
         <div class="method-description">
           
-          
+          <p>Tests that the description attribute accepts assignment</p>
           
           
 
           
           <div class="method-source-code" id="test_description_mutator-source">
-            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 73</span>
+            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 96</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_description_mutator</span>
   <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&#39;This is a test&#39;</span>, <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">description</span> = <span class="ruby-string">&#39;This is a test&#39;</span>
 <span class="ruby-keyword">end</span></pre>
@@ -248,13 +277,13 @@
 
         <div class="method-description">
           
-          
+          <p>Tests that the license attribute is able to be retrieved</p>
           
           
 
           
           <div class="method-source-code" id="test_license_accessor-source">
-            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 81</span>
+            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 108</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_license_accessor</span>
   <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&#39;GPL-3.0&#39;</span>, <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">license</span>
 <span class="ruby-keyword">end</span></pre>
@@ -281,13 +310,13 @@
 
         <div class="method-description">
           
-          
+          <p>Tests that an invalid name is not accepted</p>
           
           
 
           
           <div class="method-source-code" id="test_name_mutator_negative-source">
-            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 30</span>
+            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 33</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_name_mutator_negative</span>
   <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">name</span> = <span class="ruby-string">&#39;-test&#39;</span>
   <span class="ruby-identifier">assert_nil</span> <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">name</span>
@@ -315,13 +344,13 @@
 
         <div class="method-description">
           
-          
+          <p>Tests that a valid name is accepted</p>
           
           
 
           
           <div class="method-source-code" id="test_name_mutator_positive-source">
-            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 35</span>
+            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 40</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_name_mutator_positive</span>
   <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">name</span> = <span class="ruby-string">&#39;gbud-test&#39;</span>
   <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&#39;gbud-test&#39;</span>, <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">name</span>
@@ -349,13 +378,13 @@
 
         <div class="method-description">
           
-          
+          <p>Tests that the summary attribute accepts assignment</p>
           
           
 
           
           <div class="method-source-code" id="test_summary_mutator-source">
-            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 69</span>
+            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 90</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_summary_mutator</span>
   <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&#39;This is a test&#39;</span>, <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">summary</span> = <span class="ruby-string">&#39;This is a test&#39;</span>
 <span class="ruby-keyword">end</span></pre>
@@ -382,13 +411,13 @@
 
         <div class="method-description">
           
-          
+          <p>Tests that project metadata is properly converted to hash</p>
           
           
 
           
           <div class="method-source-code" id="test_to_hash-source">
-            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 85</span>
+            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 114</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_to_hash</span>
   <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">name</span> = <span class="ruby-string">&#39;gbud-test&#39;</span>
   <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">authors</span> = <span class="ruby-string">&#39;Richard Davis, d3d1rty&#39;</span>
@@ -421,13 +450,13 @@
 
         <div class="method-description">
           
-          
+          <p>Tests that an invalid email is rejected by validate_email</p>
           
           
 
           
           <div class="method-source-code" id="test_validate_email_negative-source">
-            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 48</span>
+            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 59</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_validate_email_negative</span>
   <span class="ruby-identifier">assert_nil</span> <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">validate_email</span>(<span class="ruby-string">&#39;rvdavis&#39;</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -454,13 +483,13 @@
 
         <div class="method-description">
           
-          
+          <p>Tests that a valid email is accepted by validate_email</p>
           
           
 
           
           <div class="method-source-code" id="test_validate_email_positive-source">
-            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 52</span>
+            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 65</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_validate_email_positive</span>
   <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">0</span>, <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">validate_email</span>(<span class="ruby-string">&#39;rvdavis@member.fsf.org&#39;</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -487,13 +516,13 @@
 
         <div class="method-description">
           
-          
+          <p>Tests that an invalid name is rejected by validate_name</p>
           
           
 
           
           <div class="method-source-code" id="test_validate_name_negative-source">
-            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 40</span>
+            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 47</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_validate_name_negative</span>
   <span class="ruby-identifier">assert_nil</span> <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">validate_name</span>(<span class="ruby-string">&#39;-fail&#39;</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -520,13 +549,13 @@
 
         <div class="method-description">
           
-          
+          <p>Tests that a valid name is accepted by validate_name</p>
           
           
 
           
           <div class="method-source-code" id="test_validate_name_positive-source">
-            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 44</span>
+            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 53</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_validate_name_positive</span>
   <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">0</span>, <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">validate_name</span>(<span class="ruby-string">&#39;test-gem&#39;</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -553,13 +582,13 @@
 
         <div class="method-description">
           
-          
+          <p>Tests that an invalid URL is rejected by validate_url</p>
           
           
 
           
           <div class="method-source-code" id="test_validate_url_negative-source">
-            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 56</span>
+            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 71</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_validate_url_negative</span>
   <span class="ruby-identifier">assert_nil</span> <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">validate_url</span>(<span class="ruby-string">&#39;github.com&#39;</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -586,13 +615,13 @@
 
         <div class="method-description">
           
-          
+          <p>Tests that a valid URL is accepted by validate_url</p>
           
           
 
           
           <div class="method-source-code" id="test_validate_url_positive-source">
-            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 60</span>
+            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 77</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_validate_url_positive</span>
   <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">0</span>, <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">validate_url</span>(<span class="ruby-string">&#39;https://github.com/d3d1rty/gbud&#39;</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -619,13 +648,13 @@
 
         <div class="method-description">
           
-          
+          <p>Tests that the version attribute is able to be retrieved</p>
           
           
 
           
           <div class="method-source-code" id="test_version_accessor-source">
-            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 77</span>
+            <pre><span class="ruby-comment"># File test/test_project_metadata.rb, line 102</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_version_accessor</span>
   <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&#39;0.0.1&#39;</span>, <span class="ruby-ivar">@metadata</span>.<span class="ruby-identifier">version</span>
 <span class="ruby-keyword">end</span></pre>
