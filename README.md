@@ -140,7 +140,7 @@ can be run manually `bundle exec rake test` or automatically using guard `bundle
 * Increase test coverage.
 
 ## Changelog
-###2017-12-23
+### 2017-12-23
 * Upgraded to version `0.1.0`.
 * Upgraded Ruby version to `2.4.1`.
 * Implemented `--cli` and `--no-cli` options.
