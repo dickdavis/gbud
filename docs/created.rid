@@ -1,9 +1,9 @@
-Sat, 23 Dec 2017 16:00:32 -0600
-README.md	Sat, 23 Dec 2017 16:00:14 -0600
-./lib/gbud.rb	Sat, 23 Dec 2017 14:27:17 -0600
-./lib/gbud/namespace.rb	Sat, 23 Dec 2017 14:21:37 -0600
-./lib/gbud/project_builder.rb	Sat, 23 Dec 2017 14:22:00 -0600
-./lib/gbud/project_metadata.rb	Sat, 23 Dec 2017 14:22:10 -0600
-./lib/gbud/user_prompt.rb	Sat, 23 Dec 2017 14:22:40 -0600
-./test/test_project_builder.rb	Sat, 23 Dec 2017 14:13:16 -0600
-./test/test_project_metadata.rb	Sat, 23 Dec 2017 14:13:55 -0600
+Sat, 23 Dec 2017 16:10:11 -0600
+README.md	Sat, 23 Dec 2017 16:07:47 -0600
+./lib/gbud.rb	Sat, 23 Dec 2017 16:05:40 -0600
+./lib/gbud/namespace.rb	Sat, 23 Dec 2017 16:05:40 -0600
+./lib/gbud/project_builder.rb	Sat, 23 Dec 2017 16:05:40 -0600
+./lib/gbud/project_metadata.rb	Sat, 23 Dec 2017 16:05:40 -0600
+./lib/gbud/user_prompt.rb	Sat, 23 Dec 2017 16:05:40 -0600
+./test/test_project_builder.rb	Sat, 23 Dec 2017 16:05:40 -0600
+./test/test_project_metadata.rb	Sat, 23 Dec 2017 16:05:40 -0600
