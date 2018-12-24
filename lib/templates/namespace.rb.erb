@@ -2,7 +2,7 @@
 
 <%= render 'copyright_snippet.rb' %>
 
-require '<%= metadata[:name] %>/base'
+require '<%= snake_case(metadata[:name]) %>/base'
 
 ##
 # = <%= camel_case(@metadata[:name]) %>

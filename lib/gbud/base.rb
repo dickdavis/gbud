@@ -52,7 +52,7 @@ optparse = OptionParser.new do |opts|
     options[:cli] = true
   end
 
-  opts.on('--no-cli', 'Creates an executable without option parsing') do
+  opts.on('--no-cli', 'Creates a project without an executable') do
     options[:cli] = false
   end
 
@@ -62,6 +62,10 @@ optparse = OptionParser.new do |opts|
 
   opts.on('-w', '--warranty', 'Displays the warranty statement') do
     puts GBud::Messages.warranty
+  end
+
+  opts.on('-v', '--version', 'Displays the program version') do
+    puts GBud::Messages.version
   end
 
   opts.on_tail('-h', '--help', 'Displays the help screen') do

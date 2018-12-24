@@ -19,14 +19,15 @@
 
 lib = File.expand_path('../lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require File.expand_path('../lib/gbud/messages', __FILE__)
 
 Gem::Specification.new do |s|
   s.name          = 'gbud'
-  s.version       = '0.2.1'
+  s.version       = GBud::Messages::VERSION
   s.platform      = Gem::Platform::RUBY
   s.authors       = ['Richard Davis']
   s.email         = 'rvdavis@member.fsf.org'
-  s.homepage      = 'http://www.github.com/d3d1rty/gbud'
+  s.homepage      = 'http://www.gitlab.com/d3d1rty/gbud'
   s.summary       = 'Initializes the basic structure of a gem'
   s.description   = <<~HEREDOC
     This project aims to make starting a new gem project simple by automating

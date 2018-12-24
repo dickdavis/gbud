@@ -27,6 +27,8 @@ module GBud
   # Module containing methods used to prompt the user for program
   # input.
   module Messages
+    VERSION = '0.2.2'
+
     ##
     # Returns the license message.
     def self.license
@@ -43,6 +45,12 @@ module GBud
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
       GNU General Public License for more details."
+    end
+
+    ##
+    # Returns the version number.
+    def self.version
+      "gbud v#{VERSION}"
     end
   end
 end
