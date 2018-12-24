@@ -3,7 +3,7 @@
 <%= render 'copyright_snippet.rb' %>
 
 require 'minitest/autorun'
-require_relative '../lib/<%= @metadata[:name] %>/hello'
+require_relative '../lib/<%= snake_case(@metadata[:name]) %>/hello'
 
 ##
 # = HelloTest

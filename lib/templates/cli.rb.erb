@@ -1,3 +1,4 @@
+require '<%= snake_case(@metadata[:name]) %>/version'
 require 'optparse'
 require 'English'
 
@@ -9,7 +10,7 @@ end
 options = {}
 
 optparse = OptionParser.new do |opts|
-  opts.banner = 'Usage: <%= @metadata[:name] %> [options]'
+  opts.banner = 'Usage: <%= snake_case(@metadata[:name]) %> [options]'
 
   opts.on('-g', '--greet NAME', 'Provides a greeting given a name.') do |name|
     options[:greet] = name
@@ -29,6 +30,10 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 "
+  end
+
+  opts.on('-v', '--version', 'Displays the program version') do
+    puts "<%= snake_case(metadata[:name]) %> v<%= '#{' + camel_case(metadata[:name]) + '::VERSION' + '}'  %>"
   end
 
   opts.on_tail('-h', '--help', 'Displays the help screen') do

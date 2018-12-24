@@ -47,26 +47,28 @@ module GBud
       @cli = cli
       @templates = {
         'readme.md': 'README.md',
-        'gemspec.rb': "#{metadata[:name]}.gemspec",
+        'gemspec.rb': "#{snake_case(metadata[:name])}.gemspec",
         'gemfile.rb': 'Gemfile',
         'rakefile.rb': 'Rakefile',
         'base.rb': 'base.rb',
         'hello.rb': 'hello.rb',
         'test_hello.rb': 'test_hello.rb',
-        'namespace.rb': "#{metadata[:name].to_s.tr('-', '_')}.rb"
+        'namespace.rb': "#{snake_case(metadata[:name])}.rb",
+        'version.rb': 'version.rb'
       }
       @assets = {
         license: 'LICENSE'
       }
       @paths = {
-        project_dir: "#{metadata[:name]}/",
-        project_lib_dir: "#{metadata[:name]}/lib/",
-        project_lib_project_dir: "#{metadata[:name]}/lib/#{metadata[:name]}/",
-        project_test_dir: "#{metadata[:name]}/test/"
+        project_dir: "#{snake_case(metadata[:name])}/",
+        project_lib_dir: "#{snake_case(metadata[:name])}/lib/",
+        project_lib_project_dir: "#{snake_case(metadata[:name])}/lib/#{snake_case(metadata[:name])}/",
+        project_test_dir: "#{snake_case(metadata[:name])}/test/"
       }
-      exit unless cli == true
-      @templates[:'executable.rb'] = metadata[:name].to_s
-      @paths[:project_bin_dir] = "#{metadata[:name]}/bin/"
+      if cli == true
+        @templates[:'executable.rb'] = snake_case(metadata[:name])
+        @paths[:project_bin_dir] = "#{snake_case(metadata[:name])}/bin/"
+      end
     end
 
     ##
@@ -121,6 +123,8 @@ module GBud
         @paths[:project_test_dir]
       when :'namespace.rb'
         @paths[:project_lib_dir]
+      when :'version.rb'
+        @paths[:project_lib_project_dir]
       end
     end
 

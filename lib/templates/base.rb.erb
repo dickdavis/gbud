@@ -9,7 +9,7 @@
 # License::   GNU Public License 3
 #
 # Main application file that loads other files.
-require '<%= @metadata[:name] %>/hello'
+require '<%= snake_case(@metadata[:name]) %>/hello'
 
 <%= render 'cli.rb' if @cli == true %>
 # NOTE: You should replace the greet functionality with some of your own code.

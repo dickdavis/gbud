@@ -1,18 +1,15 @@
-#!/usr/bin/env ruby'
 # frozen_string_literal: true
 
 <%= render 'copyright_snippet.rb' %>
 
 ##
-# = /bin/<%= snake_case(@metadata[:name]) %>
+# = version.rb
 # Author::    <%= listify(@metadata[:authors]) %>
 # Copyright:: Copyright <%= Date.today.year %> <%= listify(@metadata[:authors]) %>
 # License::   GNU Public License 3
 #
-# Project executable file.
-begin
-  require '<%= snake_case(@metadata[:name])%>'
-rescue LoadError
-  require 'rubygems'
-  require '<%= snake_case(@metadata[:name])%>'
+# Module for namespacing application classes.
+module <%= camel_case(@metadata[:name]) %>
+  # Program version number
+  VERSION = '<%= @metadata[:version] %>'
 end
